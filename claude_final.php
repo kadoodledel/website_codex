@@ -64,31 +64,6 @@
   background: rgba(126,203,32,.06) !important;
   outline: none !important;
 }
-/* Vorname links, Nachname rechts — Reihenfolge korrigieren */
-.wpforms-container .wpforms-field-row {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
-  gap: 12px !important;
-  float: none !important;
-  width: 100% !important;
-}
-.wpforms-container .wpforms-field-row .wpforms-field-row-block {
-  flex: 1 !important;
-  width: 50% !important;
-  float: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-/* Auf Mobile untereinander */
-@media(max-width:560px) {
-  .wpforms-container .wpforms-field-row {
-    flex-direction: column !important;
-  }
-  .wpforms-container .wpforms-field-row .wpforms-field-row-block {
-    width: 100% !important;
-  }
-}
 /* Alle input-Typen abdecken inkl. type="text" von WPForms */
 .wpforms-container .wpforms-form input,
 .wpforms-container .wpforms-form input[type="text"],
@@ -132,6 +107,18 @@
 }
 .wpforms-container .wpforms-field-row::after {
   display: none !important;
+}
+.wpforms-container .wpforms-field-name .wpforms-field-row {
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px !important;
+}
+.wpforms-container .wpforms-field-name .wpforms-field-row .wpforms-field-row-block {
+  min-width: 0 !important;
+}
+@media(max-width:560px){
+  .wpforms-container .wpforms-field-name .wpforms-field-row {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* Submit-Button */
@@ -290,7 +277,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(24,36,26,.97
 .hero-content{position:relative;z-index:2;max-width:720px;animation:fadeUp .9s ease both}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 .hero .eyebrow{animation:fadeUp .9s .1s ease both}
-.hero h1{font-family:var(--fd);font-size:clamp(54px,13vw,100px);letter-spacing:.06em;text-transform:uppercase;line-height:1.0;margin-bottom:28px;animation:fadeUp .9s .15s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(54px,13vw,100px);letter-spacing:.06em;text-transform:uppercase;line-height:1.0;margin-bottom:28px;animation:fadeUp .9s .15s ease both;color:var(--white)}
 .hero h1 span{color:var(--lime)}
 .hero-info{margin-bottom:8px;animation:fadeUp .9s .2s ease both}
 .hero-info p{font-size:17px;color:var(--tl);font-weight:400}
@@ -711,11 +698,12 @@ footer{background:rgba(0,0,0,.4);border-top:1px solid rgba(126,203,32,.08);paddi
     <div style="margin-top:44px">
       <div class="eyebrow" style="margin-bottom:16px">Aktuelle Sorten &amp; Produkte</div>
       <div class="strains-grid">
-        <div class="strain-card"><div class="strain-tag">Blüten</div><div class="strain-name">Blueberry Skunk</div></div>
+        <div class="strain-card"><div class="strain-tag">Blüten</div><div class="strain-name">Bluberry Zkunk</div></div>
+        <div class="strain-card"><div class="strain-tag">Blüten</div><div class="strain-name">Bluzzi</div></div>
+        <div class="strain-card"><div class="strain-tag">Blüten</div><div class="strain-name">Gelonade</div></div>
         <div class="strain-card"><div class="strain-tag">Blüten</div><div class="strain-name">Pink Chai</div></div>
         <div class="strain-card"><div class="strain-tag">Blüten</div><div class="strain-name">RS11</div></div>
-        <div class="strain-card"><div class="strain-tag">Blüten</div><div class="strain-name">Gelonade</div></div>
-        <div class="strain-card"><div class="strain-tag">Blüten</div><div class="strain-name">Bluzzi</div></div>
+        <div class="strain-card"><div class="strain-tag">Blüten</div><div class="strain-name">Super Boof</div></div>
         <div class="strain-card strain-card--product"><div class="strain-tag strain-tag--product">Produkt</div><div class="strain-name">Kief</div></div>
       </div>
       <p style="font-size:12px;font-weight:300;color:var(--tm);margin-top:14px">Das Sortiment wird laufend erweitert. Zukünftig entscheidest du gemeinsam mit der Community, welche Sorten angebaut werden.</p>
@@ -793,7 +781,7 @@ footer{background:rgba(0,0,0,.4);border-top:1px solid rgba(126,203,32,.08);paddi
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="glmFaq(this)">Welche Sorten bietet ihr an?<span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>Aktuell bieten wir Blueberry Skunk, Pink Chai, RS11, Gelonade und Bluzzi als Blütensorten an — außerdem Kief als Produkt. Das Sortiment wird laufend erweitert, zukünftig durch Community-Abstimmung.</p></div>
+        <div class="faq-a"><p>Aktuell bieten wir Bluberry Zkunk, Bluzzi, Gelonade, Pink Chai, RS11 und Super Boof als Blütensorten an — außerdem Kief als Produkt. Das Sortiment wird laufend erweitert, zukünftig durch Community-Abstimmung.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="glmFaq(this)">Wie schützt ihr meine persönlichen Daten?<span class="faq-icon">+</span></button>
