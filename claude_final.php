@@ -91,21 +91,21 @@
   letter-spacing: 0 !important;
 }
 
-/* Subfelder (Vor-/Nachname) — Float komplett resetten */
-.wpforms-container .wpforms-field-row {
+/* Subfelder (Vor-/Nachname) — nur für Name-Feld scopen */
+.wpforms-container .wpforms-field-name .wpforms-field-row {
   display: grid !important;
   grid-template-columns: 1fr 1fr !important;
   gap: 12px !important;
   float: none !important;
   width: 100% !important;
 }
-.wpforms-container .wpforms-field-row .wpforms-field-row-block {
+.wpforms-container .wpforms-field-name .wpforms-field-row .wpforms-field-row-block {
   width: 100% !important;
   float: none !important;
   padding: 0 !important;
   margin: 0 !important;
 }
-.wpforms-container .wpforms-field-row::after {
+.wpforms-container .wpforms-field-name .wpforms-field-row::after {
   display: none !important;
 }
 .wpforms-container .wpforms-field-name .wpforms-field-row {
@@ -175,29 +175,21 @@
 /* Abstände zwischen Feldern */
 .wpforms-container .wpforms-field { margin-bottom: 14px !important; padding: 0 !important; }
 
-/* ── KACHELN ── */
-.cc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
-.cc { cursor: pointer; display: block; }
-.cc-inner {
-  border: 1.5px solid rgba(255,255,255,.08);
-  border-radius: 6px;
-  padding: 13px 14px;
-  background: rgba(255,255,255,.04);
-  transition: border-color .15s, background .15s;
+/* WPForms-Spaltenklassen neutralisieren (verhindert versetztes erstes Feld) */
+.wpforms-container .wpforms-form .wpforms-field.wpforms-one-half,
+.wpforms-container .wpforms-form .wpforms-field.wpforms-two-fourths,
+.wpforms-container .wpforms-form .wpforms-field.wpforms-three-sixths,
+.wpforms-container .wpforms-form .wpforms-field.wpforms-first,
+.wpforms-container .wpforms-form .wpforms-field.wpforms-one-third,
+.wpforms-container .wpforms-form .wpforms-field.wpforms-two-sixths,
+.wpforms-container .wpforms-form .wpforms-field.wpforms-two-thirds,
+.wpforms-container .wpforms-form .wpforms-field.wpforms-four-sixths {
+  width: 100% !important;
+  margin-left: 0 !important;
+  float: none !important;
+  clear: both !important;
 }
-.cc-inner:hover { border-color: rgba(126,203,32,.35); background: rgba(126,203,32,.04); }
-.cc-icon { font-size: 17px; margin-bottom: 5px; display: block; }
-.cc-lbl { font-size: 13px; font-weight: 700; color: #fff; }
-.cc-sub { font-size: 11px; color: rgba(255,255,255,.38); margin-top: 2px; }
 
-/* ── FORM-SEKTION TITEL ── */
-.fsec-title {
-  font-size: 10px; font-weight: 700; letter-spacing: .15em;
-  text-transform: uppercase; color: #7ecb20;
-  margin-bottom: 12px; padding-bottom: 8px;
-  border-bottom: 1px solid rgba(126,203,32,.12);
-}
-.fsec { margin-bottom: 20px; }
 /* Erwingt volle Breite und entfernt Ränder von WordPress-Standard-Containern */
 html, body {
     margin: 0 !important;
