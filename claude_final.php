@@ -11,7 +11,7 @@
 <title>Green Leaf Münster e.V. – Social Club Münster</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
 <?php wp_head(); ?>
 
 <!--
@@ -49,8 +49,8 @@
   color: #fff !important;
   padding: 11px 14px !important;
   border-radius: 6px !important;
-  font-family: 'Alegreya Sans', sans-serif !important;
-  font-size: 15px !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 16px !important;
   width: 100% !important;
 }
 .wpforms-container .wpforms-form input::placeholder,
@@ -64,31 +64,6 @@
   background: rgba(126,203,32,.06) !important;
   outline: none !important;
 }
-/* Vorname links, Nachname rechts — Reihenfolge korrigieren */
-.wpforms-container .wpforms-field-row {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
-  gap: 12px !important;
-  float: none !important;
-  width: 100% !important;
-}
-.wpforms-container .wpforms-field-row .wpforms-field-row-block {
-  flex: 1 !important;
-  width: 50% !important;
-  float: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-/* Auf Mobile untereinander */
-@media(max-width:560px) {
-  .wpforms-container .wpforms-field-row {
-    flex-direction: column !important;
-  }
-  .wpforms-container .wpforms-field-row .wpforms-field-row-block {
-    width: 100% !important;
-  }
-}
 /* Alle input-Typen abdecken inkl. type="text" von WPForms */
 .wpforms-container .wpforms-form input,
 .wpforms-container .wpforms-form input[type="text"],
@@ -101,17 +76,17 @@
 /* Labels */
 .wpforms-container .wpforms-field-label {
   color: rgba(255,255,255,.55) !important;
-  font-size: 12px !important;
+  font-size: 13px !important;
   font-weight: 700 !important;
   letter-spacing: .06em !important;
   text-transform: uppercase !important;
-  font-family: 'Alegreya Sans', sans-serif !important;
+  font-family: 'Inter', sans-serif !important;
   margin-bottom: 6px !important;
 }
 .wpforms-container .wpforms-field-label-inline {
   color: rgba(255,255,255,.75) !important;
-  font-size: 15px !important;
-  font-weight: 300 !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
   text-transform: none !important;
   letter-spacing: 0 !important;
 }
@@ -133,15 +108,27 @@
 .wpforms-container .wpforms-field-row::after {
   display: none !important;
 }
+.wpforms-container .wpforms-field-name .wpforms-field-row {
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px !important;
+}
+.wpforms-container .wpforms-field-name .wpforms-field-row .wpforms-field-row-block {
+  min-width: 0 !important;
+}
+@media(max-width:560px){
+  .wpforms-container .wpforms-field-name .wpforms-field-row {
+    grid-template-columns: 1fr !important;
+  }
+}
 
 /* Submit-Button */
 .wpforms-container .wpforms-submit-container { margin-top: 8px !important; }
 .wpforms-container .wpforms-submit {
   background: #7ecb20 !important;
   color: #1c2b1e !important;
-  font-family: 'Bebas Neue', sans-serif !important;
-  font-size: 16px !important;
-  letter-spacing: .1em !important;
+  font-family: 'Oswald', sans-serif !important;
+  font-size: 17px !important;
+  letter-spacing: .08em !important;
   text-transform: uppercase !important;
   border: none !important;
   border-radius: 6px !important;
@@ -159,7 +146,7 @@
   height: 16px !important;
 }
 .wpforms-container .wpforms-field-checkbox .wpforms-field-label-inline {
-  font-size: 12px !important;
+  font-size: 13px !important;
   color: rgba(255,255,255,.5) !important;
   line-height: 1.6 !important;
 }
@@ -233,18 +220,18 @@ html, body {
   --border:rgba(126,203,32,.15);
   --r:10px;
   --rs:6px;
-  --fd:'Bebas Neue',sans-serif;
-  --fb:'Alegreya Sans',sans-serif;
+  --fd:'Oswald',sans-serif;
+  --fb:'Inter',sans-serif;
 }
 html{scroll-behavior:smooth}
-body{font-family:var(--fb);background:var(--dark);color:var(--white);line-height:1.7;font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{font-family:var(--fb);background:var(--dark);color:var(--white);line-height:1.72;font-size:18px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
 /* ── UTILS ── */
 .wrap{max-width:960px;margin:0 auto;padding:0 20px}
-.eyebrow{font-family:var(--fb);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--lime);margin-bottom:10px}
+.eyebrow{font-family:var(--fb);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);margin-bottom:12px}
 .h2{font-family:var(--fd);font-size:clamp(28px,5vw,46px);letter-spacing:.05em;text-transform:uppercase;color:var(--white);line-height:1.0;margin-bottom:16px}
-.lead{font-size:15px;font-weight:300;color:var(--tl);line-height:1.85;max-width:620px}
-.btn{display:inline-block;font-family:var(--fd);font-size:16px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:12px 30px;border-radius:var(--rs);border:none;cursor:pointer;transition:background .2s,transform .15s}
+.lead{font-size:17px;font-weight:400;color:var(--tl);line-height:1.78;max-width:620px}
+.btn{display:inline-block;font-family:var(--fd);font-size:17px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:12px 30px;border-radius:var(--rs);border:none;cursor:pointer;transition:background .2s,transform .15s}
 .btn-lime{background:var(--lime);color:var(--dark)}
 .btn-lime:hover{background:var(--lime2);transform:translateY(-2px)}
 .btn-outline{background:transparent;color:var(--lime);border:1.5px solid var(--lime)}
@@ -268,17 +255,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(24,36,26,.97
 .nl img{height:38px;width:38px;object-fit:contain}
 .nb{display:flex;flex-direction:column;line-height:1.15}
 .nb-main{font-family:var(--fd);font-size:18px;color:var(--white);letter-spacing:.1em;text-transform:uppercase;line-height:1}
-.nb-sub{font-family:var(--fb);font-size:9px;color:var(--lime);letter-spacing:.18em;text-transform:uppercase;margin-top:2px}
+.nb-sub{font-family:var(--fb);font-size:11px;color:var(--lime);letter-spacing:.12em;text-transform:uppercase;margin-top:2px}
 .nav-links{display:flex;align-items:center;gap:2px;list-style:none}
-.nav-links a{font-family:var(--fb);font-size:13px;color:var(--tl);text-decoration:none;padding:7px 12px;border-radius:var(--rs);transition:color .2s,background .2s;white-space:nowrap}
+.nav-links a{font-family:var(--fb);font-size:14px;color:var(--tl);text-decoration:none;padding:7px 12px;border-radius:var(--rs);transition:color .2s,background .2s;white-space:nowrap}
 .nav-links a:hover{color:var(--lime);background:rgba(126,203,32,.08)}
-.ncta{background:var(--lime)!important;color:var(--dark)!important;font-family:var(--fd)!important;font-size:14px!important;letter-spacing:.1em!important;text-transform:uppercase!important}
+.ncta{background:var(--lime)!important;color:var(--dark)!important;font-family:var(--fd)!important;font-size:15px!important;letter-spacing:.08em!important;text-transform:uppercase!important}
 .ncta:hover{background:var(--lime2)!important}
 .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:none}
 .burger span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px;transition:all .3s}
 .mob-nav{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(24,36,26,.98);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:16px 20px;flex-direction:column;gap:4px;z-index:199}
 .mob-nav.open{display:flex}
-.mob-nav a{font-family:var(--fb);font-size:15px;color:var(--tl);text-decoration:none;padding:11px 12px;border-radius:var(--rs);border-bottom:1px solid rgba(255,255,255,.05)}
+.mob-nav a{font-family:var(--fb);font-size:16px;color:var(--tl);text-decoration:none;padding:12px 12px;border-radius:var(--rs);border-bottom:1px solid rgba(255,255,255,.05)}
 .mob-nav a.mob-cta{border-bottom:none;background:var(--lime);color:var(--dark);font-family:var(--fd);font-size:16px;letter-spacing:.1em;text-transform:uppercase;text-align:center;margin-top:8px}
 @media(max-width:780px){.nav-links{display:none}.burger{display:flex}}
 
@@ -290,15 +277,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(24,36,26,.97
 .hero-content{position:relative;z-index:2;max-width:720px;animation:fadeUp .9s ease both}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 .hero .eyebrow{animation:fadeUp .9s .1s ease both}
-.hero h1{font-family:var(--fd);font-size:clamp(54px,13vw,100px);letter-spacing:.06em;text-transform:uppercase;line-height:1.0;margin-bottom:28px;animation:fadeUp .9s .15s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(54px,13vw,100px);letter-spacing:.06em;text-transform:uppercase;line-height:1.0;margin-bottom:28px;animation:fadeUp .9s .15s ease both;color:var(--white)}
 .hero h1 span{color:var(--lime)}
 .hero-info{margin-bottom:8px;animation:fadeUp .9s .2s ease both}
-.hero-info p{font-size:15px;color:var(--tl);font-weight:300}
+.hero-info p{font-size:17px;color:var(--tl);font-weight:400}
 .hero-info p strong{font-weight:700;color:var(--white)}
-.hero-or{font-size:13px;color:var(--tm);margin:20px 0 12px;animation:fadeUp .9s .25s ease both}
+.hero-or{font-size:14px;color:var(--tm);margin:20px 0 12px;animation:fadeUp .9s .25s ease both}
 .hero-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;animation:fadeUp .9s .3s ease both}
 .hero-social{display:flex;gap:18px;justify-content:center;margin-top:26px;animation:fadeUp .9s .35s ease both}
-.hero-social a{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--tm);text-decoration:none;transition:color .2s}
+.hero-social a{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--tm);text-decoration:none;transition:color .2s}
 .hero-social a:hover{color:var(--lime)}
 .hero-scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--td);font-size:10px;letter-spacing:.12em;text-transform:uppercase;animation:bob 2.2s ease-in-out infinite}
 @keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)}}
@@ -415,9 +402,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(24,36,26,.97
 .frow.s1{grid-template-columns:1fr}
 .frow.s3{grid-template-columns:1fr 1fr 1fr}
 .ffield{display:flex;flex-direction:column;gap:5px}
-.ffield label{font-family:var(--fb);font-size:11px;font-weight:700;color:rgba(255,255,255,.55);letter-spacing:.06em;text-transform:uppercase}
+.ffield label{font-family:var(--fb);font-size:12px;font-weight:700;color:rgba(255,255,255,.62);letter-spacing:.05em;text-transform:uppercase}
 .ffield label .req{color:var(--lime);margin-left:2px}
-.ffield input,.ffield select,.ffield textarea{font-family:var(--fb);font-size:14px;font-weight:300;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--rs);padding:10px 14px;outline:none;transition:border-color .2s,background .2s;width:100%;appearance:none;-webkit-appearance:none;color-scheme:dark}
+.ffield input,.ffield select,.ffield textarea{font-family:var(--fb);font-size:15px;font-weight:400;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--rs);padding:11px 14px;outline:none;transition:border-color .2s,background .2s;width:100%;appearance:none;-webkit-appearance:none;color-scheme:dark}
 .ffield input::placeholder,.ffield textarea::placeholder{color:rgba(255,255,255,.22)}
 .ffield input:focus,.ffield select:focus,.ffield textarea:focus{border-color:var(--lime);background:rgba(126,203,32,.06)}
 .ffield textarea{resize:vertical;min-height:84px;line-height:1.6}
@@ -437,10 +424,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(24,36,26,.97
 .disclaimer{background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.06);border-radius:var(--rs);padding:14px;margin-bottom:22px;display:flex;flex-direction:column;gap:11px}
 .ci{display:flex;align-items:flex-start;gap:10px;cursor:pointer}
 .ci input[type=checkbox]{width:16px;height:16px;min-width:16px;margin-top:2px;accent-color:var(--lime);cursor:pointer;background:transparent;border:none;padding:0}
-.ci span{font-family:var(--fb);font-size:12px;color:rgba(255,255,255,.5);font-weight:300;line-height:1.6}
+.ci span{font-family:var(--fb);font-size:13px;color:rgba(255,255,255,.56);font-weight:400;line-height:1.6}
 .ci span strong{color:rgba(255,255,255,.82);font-weight:700}
 .fdivider{height:1px;background:rgba(255,255,255,.07);margin:18px 0}
-.btn-submit{width:100%;font-family:var(--fd);font-size:16px;letter-spacing:.1em;text-transform:uppercase;color:var(--dark);background:var(--lime);border:none;border-radius:var(--rs);padding:13px 28px;cursor:pointer;transition:background .2s,transform .1s}
+.btn-submit{width:100%;font-family:var(--fd);font-size:17px;letter-spacing:.08em;text-transform:uppercase;color:var(--dark);background:var(--lime);border:none;border-radius:var(--rs);padding:13px 28px;cursor:pointer;transition:background .2s,transform .1s}
 .btn-submit:hover{background:var(--lime2)}
 .btn-submit:active{transform:scale(.99)}
 .success-msg{display:none;text-align:center;padding:56px 28px}
@@ -468,6 +455,7 @@ footer{background:rgba(0,0,0,.4);border-top:1px solid rgba(126,203,32,.08);paddi
   .presse-card{flex-direction:column;gap:14px}
 }
 @media(max-width:560px){
+  body{font-size:17px}
   .trust-grid,.facts-grid{grid-template-columns:1fr}
   .fact-wide{grid-column:span 1}
   .strains-grid{grid-template-columns:repeat(2,1fr)}
@@ -710,12 +698,12 @@ footer{background:rgba(0,0,0,.4);border-top:1px solid rgba(126,203,32,.08);paddi
     <div style="margin-top:44px">
       <div class="eyebrow" style="margin-bottom:16px">Aktuelle Sorten &amp; Produkte</div>
       <div class="strains-grid">
-        <div class="strain-card"><div class="strain-tag">Blüten</div><div class="strain-name">Blueberry Skunk</div></div>
+        <div class="strain-card"><div class="strain-tag">Blüten</div><div class="strain-name">Bluberry Zkunk</div></div>
+        <div class="strain-card"><div class="strain-tag">Blüten</div><div class="strain-name">Bluzzi</div></div>
+        <div class="strain-card"><div class="strain-tag">Blüten</div><div class="strain-name">Gelonade</div></div>
         <div class="strain-card"><div class="strain-tag">Blüten</div><div class="strain-name">Pink Chai</div></div>
         <div class="strain-card"><div class="strain-tag">Blüten</div><div class="strain-name">RS11</div></div>
-        <div class="strain-card"><div class="strain-tag">Blüten</div><div class="strain-name">Gelonade</div></div>
-        <div class="strain-card"><div class="strain-tag">Blüten</div><div class="strain-name">Super Kush</div></div>
-        <div class="strain-card"><div class="strain-tag">Blüten</div><div class="strain-name">Bluzzi</div></div>
+        <div class="strain-card"><div class="strain-tag">Blüten</div><div class="strain-name">Super Boof</div></div>
         <div class="strain-card strain-card--product"><div class="strain-tag strain-tag--product">Produkt</div><div class="strain-name">Kief</div></div>
       </div>
       <p style="font-size:12px;font-weight:300;color:var(--tm);margin-top:14px">Das Sortiment wird laufend erweitert. Zukünftig entscheidest du gemeinsam mit der Community, welche Sorten angebaut werden.</p>
@@ -793,7 +781,7 @@ footer{background:rgba(0,0,0,.4);border-top:1px solid rgba(126,203,32,.08);paddi
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="glmFaq(this)">Welche Sorten bietet ihr an?<span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>Aktuell bieten wir Blueberry Skunk, Pink Chai, RS11, Gelonade, Super Kush und Bluzzi als Blütensorten an — außerdem Kief als Produkt. Das Sortiment wird laufend erweitert, zukünftig durch Community-Abstimmung.</p></div>
+        <div class="faq-a"><p>Aktuell bieten wir Bluberry Zkunk, Bluzzi, Gelonade, Pink Chai, RS11 und Super Boof als Blütensorten an — außerdem Kief als Produkt. Das Sortiment wird laufend erweitert, zukünftig durch Community-Abstimmung.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="glmFaq(this)">Wie schützt ihr meine persönlichen Daten?<span class="faq-icon">+</span></button>
@@ -859,43 +847,84 @@ footer{background:rgba(0,0,0,.4);border-top:1px solid rgba(126,203,32,.08);paddi
           </div>
         </div>
 <div class="form-body" id="glm-body-interesse">
-
-  <!-- Kontakt-Kacheln -->
-  <div class="fsec">
-    <div class="fsec-title">Bevorzugte Kontaktaufnahme</div>
-    <div class="cc-grid">
-      <label class="cc" onclick="setKontakt('E-Mail')">
-        <div class="cc-inner active-kachel" id="kachel-email">
-          <span class="cc-icon">✉</span>
-          <div class="cc-lbl">Per E-Mail</div>
-          <div class="cc-sub">Antwort innerhalb 2 Werktagen</div>
+  <form id="glm-custom-interesse" class="glm-custom-form" novalidate>
+    <div class="fsec">
+      <div class="fsec-title">Bevorzugte Kontaktaufnahme</div>
+      <div class="cc-grid">
+        <label class="cc" onclick="setKontakt('E-Mail')">
+          <div class="cc-inner active-kachel" id="kachel-email">
+            <span class="cc-icon">✉</span>
+            <div class="cc-lbl">Per E-Mail</div>
+            <div class="cc-sub">Antwort innerhalb 2 Werktagen</div>
+          </div>
+        </label>
+        <label class="cc" onclick="setKontakt('Telefonisch')">
+          <div class="cc-inner" id="kachel-telefon">
+            <span class="cc-icon">☎</span>
+            <div class="cc-lbl">Telefonisch</div>
+            <div class="cc-sub">Wir rufen zurück</div>
+          </div>
+        </label>
+        <label class="cc" onclick="setKontakt('Post')">
+          <div class="cc-inner" id="kachel-post">
+            <span class="cc-icon">✉</span>
+            <div class="cc-lbl">Schriftlich / Post</div>
+            <div class="cc-sub">Per Brief an deine Adresse</div>
+          </div>
+        </label>
+        <label class="cc" onclick="setKontakt('Termin vor Ort')">
+          <div class="cc-inner" id="kachel-termin">
+            <span class="cc-icon">⌖</span>
+            <div class="cc-lbl">Termin vor Ort</div>
+            <div class="cc-sub">In unserer Vereinsstätte</div>
+          </div>
+        </label>
+      </div>
+    </div>
+    <div class="fsec">
+      <div class="fsec-title">Kontaktdaten</div>
+      <div class="frow">
+        <div class="ffield">
+          <label for="ci-vorname">Vorname <span class="req">*</span></label>
+          <input id="ci-vorname" name="vorname" type="text" required>
         </div>
-      </label>
-      <label class="cc" onclick="setKontakt('Telefonisch')">
-        <div class="cc-inner" id="kachel-telefon">
-          <span class="cc-icon">☎</span>
-          <div class="cc-lbl">Telefonisch</div>
-          <div class="cc-sub">Wir rufen zurück</div>
+        <div class="ffield">
+          <label for="ci-nachname">Nachname <span class="req">*</span></label>
+          <input id="ci-nachname" name="nachname" type="text" required>
         </div>
-      </label>
-      <label class="cc" onclick="setKontakt('Post')">
-        <div class="cc-inner" id="kachel-post">
-          <span class="cc-icon">✉</span>
-          <div class="cc-lbl">Schriftlich / Post</div>
-          <div class="cc-sub">Per Brief an deine Adresse</div>
+      </div>
+      <div class="frow">
+        <div class="ffield">
+          <label for="ci-email">E-Mail <span class="req">*</span></label>
+          <input id="ci-email" name="email" type="email" required>
         </div>
-      </label>
-      <label class="cc" onclick="setKontakt('Termin vor Ort')">
-        <div class="cc-inner" id="kachel-termin">
-          <span class="cc-icon">⌖</span>
-          <div class="cc-lbl">Termin vor Ort</div>
-          <div class="cc-sub">In unserer Vereinsstätte</div>
+        <div class="ffield">
+          <label for="ci-telefon">Telefon</label>
+          <input id="ci-telefon" name="telefon" type="tel">
         </div>
+      </div>
+      <div class="frow s1">
+        <div class="ffield">
+          <label for="ci-nachricht">Nachricht</label>
+          <textarea id="ci-nachricht" name="nachricht" placeholder="Wobei können wir dir helfen?"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="disclaimer">
+      <label class="ci">
+        <input type="checkbox" id="ci-datenschutz" required>
+        <span>Ich akzeptiere die <strong>Datenschutzbestimmungen</strong> und die Verarbeitung meiner Daten zur Kontaktaufnahme.</span>
       </label>
     </div>
+    <button type="submit" class="btn-submit">Kontaktanfrage senden</button>
+  </form>
+  <!-- WPForms Ziel (ID 1815) bleibt als Datenziel erhalten -->
+  <div id="glm-wpforms-interesse" style="display:none"><?php echo do_shortcode('[wpforms id="1815"]'); ?></div>
+  <div class="success-msg" id="glm-ok-interesse">
+    <div class="success-circle">✓</div>
+    <h3>Anfrage gesendet</h3>
+    <p>Danke! Deine Kontaktanfrage wurde übermittelt. Wir melden uns zeitnah zurück.</p>
   </div>
-
-  <?php echo do_shortcode('[wpforms id="1815"]'); ?>
         </div><!-- /form-body -->
       </div><!-- /form-card -->
     </div><!-- /form-panel -->
@@ -911,7 +940,63 @@ footer{background:rgba(0,0,0,.4);border-top:1px solid rgba(126,203,32,.08);paddi
           </div>
         </div>
         <div class="form-body" id="glm-body-antrag">
-          <?php echo do_shortcode('[wpforms id="1843"]'); ?>
+          <form id="glm-custom-antrag" class="glm-custom-form" novalidate>
+            <div class="fsec">
+              <div class="fsec-title">Persönliche Daten</div>
+              <div class="frow">
+                <div class="ffield">
+                  <label for="ca-vorname">Vorname <span class="req">*</span></label>
+                  <input id="ca-vorname" name="vorname" type="text" required>
+                </div>
+                <div class="ffield">
+                  <label for="ca-nachname">Nachname <span class="req">*</span></label>
+                  <input id="ca-nachname" name="nachname" type="text" required>
+                </div>
+              </div>
+              <div class="frow">
+                <div class="ffield">
+                  <label for="ca-geburt">Geburtsdatum <span class="req">*</span></label>
+                  <input id="ca-geburt" name="geburtsdatum" type="date" required>
+                </div>
+                <div class="ffield">
+                  <label for="ca-staat">Wohnsitzland <span class="req">*</span></label>
+                  <input id="ca-staat" name="land" type="text" value="Deutschland" required>
+                </div>
+              </div>
+            </div>
+            <div class="fsec">
+              <div class="fsec-title">Kontakt & Adresse</div>
+              <div class="frow">
+                <div class="ffield">
+                  <label for="ca-email">E-Mail <span class="req">*</span></label>
+                  <input id="ca-email" name="email" type="email" required>
+                </div>
+                <div class="ffield">
+                  <label for="ca-telefon">Telefon <span class="req">*</span></label>
+                  <input id="ca-telefon" name="telefon" type="tel" required>
+                </div>
+              </div>
+              <div class="frow s1">
+                <div class="ffield">
+                  <label for="ca-adresse">Adresse <span class="req">*</span></label>
+                  <input id="ca-adresse" name="adresse" type="text" required>
+                </div>
+              </div>
+            </div>
+            <div class="disclaimer">
+              <label class="ci">
+                <input type="checkbox" id="ca-datenschutz" required>
+                <span>Ich bestätige die Richtigkeit meiner Angaben und akzeptiere die <strong>Datenschutzbestimmungen</strong>.</span>
+              </label>
+              <label class="ci">
+                <input type="checkbox" id="ca-mindestalter" required>
+                <span>Ich bestätige, dass ich mindestens <strong>21 Jahre</strong> alt bin.</span>
+              </label>
+            </div>
+            <button type="submit" class="btn-submit">Verbindlichen Antrag senden</button>
+          </form>
+          <!-- WPForms Ziel (ID 1843) bleibt als Datenziel erhalten -->
+          <div id="glm-wpforms-antrag" style="display:none"><?php echo do_shortcode('[wpforms id="1843"]'); ?></div>
         </div><!-- /form-body -->
         <div class="success-msg" id="glm-ok-antrag">
           <div class="success-circle">✓</div>
@@ -1001,8 +1086,8 @@ function setKontakt(wert) {
     aktiv.style.borderColor = 'var(--lime)';
     aktiv.style.background = 'rgba(126,203,32,.08)';
   }
-  // Alle Radio-Buttons in WPForms durchsuchen und den passenden anklicken
-  document.querySelectorAll('.wpforms-field-radio input[type="radio"]').forEach(function(r) {
+  // Alle Radio-Buttons im versteckten Kontaktformular durchsuchen und den passenden anklicken
+  document.querySelectorAll('#glm-wpforms-interesse .wpforms-field-radio input[type="radio"]').forEach(function(r) {
     // Prüfe sowohl value als auch das Label daneben
     var label = r.closest('li') ? r.closest('li').textContent.trim() : '';
     if (r.value === wert || label === wert) {
@@ -1011,8 +1096,97 @@ function setKontakt(wert) {
     }
   });
 }
-	
+
+function glmNorm(v){
+  return (v||'').toString().toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/[^a-z0-9]+/g,' ').trim();
+}
+
+function glmFindField(form, keys){
+  var target = (keys||[]).map(glmNorm);
+  var fields = form.querySelectorAll('input:not([type=hidden]):not([type=submit]),select,textarea');
+  for(var i=0;i<fields.length;i++){
+    var el = fields[i];
+    var labelEl = form.querySelector('label[for=\"'+el.id+'\"]');
+    var ctx = [el.name, el.id, el.placeholder, el.getAttribute('aria-label'), labelEl ? labelEl.textContent : '']
+      .filter(Boolean).map(glmNorm).join(' ');
+    if(target.some(function(k){ return ctx.indexOf(k) !== -1; })) return el;
+  }
+  return null;
+}
+
+function glmSetField(form, keys, value){
+  var el = glmFindField(form, keys);
+  if(!el) return false;
+  if(el.type === 'radio'){
+    var radios = form.querySelectorAll('input[type=radio][name=\"'+el.name+'\"]');
+    radios.forEach(function(r){
+      var label = r.closest('li') ? r.closest('li').textContent : '';
+      if(glmNorm(r.value) === glmNorm(value) || glmNorm(label).indexOf(glmNorm(value)) !== -1){
+        r.checked = true;
+      }
+    });
+    return true;
+  }
+  if(el.type === 'checkbox'){
+    el.checked = !!value;
+    return true;
+  }
+  el.value = value || '';
+  el.dispatchEvent(new Event('input', {bubbles:true}));
+  el.dispatchEvent(new Event('change', {bubbles:true}));
+  return true;
+}
+
+function glmBridgeSubmit(customFormId, wpformsWrapId, map, successId){
+  var customForm = document.getElementById(customFormId);
+  var wrap = document.getElementById(wpformsWrapId);
+  if(!customForm || !wrap) return;
+  customForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!customForm.reportValidity()) return;
+    var wpForm = wrap.querySelector('form');
+    if(!wpForm) return;
+    map.forEach(function(row){
+      var src = customForm.querySelector(row.from);
+      if(!src) return;
+      glmSetField(wpForm, row.to, (src.type === 'checkbox') ? src.checked : src.value);
+    });
+    var submitBtn = wpForm.querySelector('button[type=submit], input[type=submit]');
+    if(submitBtn){
+      submitBtn.click();
+      var ok = document.getElementById(successId);
+      if(ok){
+        customForm.style.display = 'none';
+        ok.style.display = 'block';
+      }
+    }
+  });
+}
+		
 document.addEventListener('DOMContentLoaded', function(){
+  glmBridgeSubmit('glm-custom-interesse','glm-wpforms-interesse',[
+    {from:'#ci-vorname', to:['vorname','first','name']},
+    {from:'#ci-nachname', to:['nachname','last','name']},
+    {from:'#ci-email', to:['email','e mail']},
+    {from:'#ci-telefon', to:['telefon','phone','tel']},
+    {from:'#ci-nachricht', to:['nachricht','message','bemerkung']},
+    {from:'#ci-datenschutz', to:['datenschutz','einverstandnis','consent']}
+  ],'glm-ok-interesse');
+
+  glmBridgeSubmit('glm-custom-antrag','glm-wpforms-antrag',[
+    {from:'#ca-vorname', to:['vorname','first','name']},
+    {from:'#ca-nachname', to:['nachname','last','name']},
+    {from:'#ca-geburt', to:['geburt','birth','datum']},
+    {from:'#ca-staat', to:['land','country','wohnsitz']},
+    {from:'#ca-email', to:['email','e mail']},
+    {from:'#ca-telefon', to:['telefon','phone','tel']},
+    {from:'#ca-adresse', to:['adresse','anschrift','street']},
+    {from:'#ca-datenschutz', to:['datenschutz','einverstandnis','consent']},
+    {from:'#ca-mindestalter', to:['21','mindestalter','age']}
+  ],'glm-ok-antrag');
+
   document.querySelectorAll('a[href^="#"]').forEach(function(a){
     a.addEventListener('click',function(e){
       var href = a.getAttribute('href');
