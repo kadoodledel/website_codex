@@ -174,6 +174,22 @@
 
 /* Abstände zwischen Feldern */
 .wpforms-container .wpforms-field { margin-bottom: 14px !important; padding: 0 !important; }
+
+/* WPForms-Spaltenklassen neutralisieren (verhindert versetztes erstes Feld) */
+.wpforms-container .wpforms-form .wpforms-field.wpforms-one-half,
+.wpforms-container .wpforms-form .wpforms-field.wpforms-two-fourths,
+.wpforms-container .wpforms-form .wpforms-field.wpforms-three-sixths,
+.wpforms-container .wpforms-form .wpforms-field.wpforms-first,
+.wpforms-container .wpforms-form .wpforms-field.wpforms-one-third,
+.wpforms-container .wpforms-form .wpforms-field.wpforms-two-sixths,
+.wpforms-container .wpforms-form .wpforms-field.wpforms-two-thirds,
+.wpforms-container .wpforms-form .wpforms-field.wpforms-four-sixths {
+  width: 100% !important;
+  margin-left: 0 !important;
+  float: none !important;
+  clear: both !important;
+}
+
 /* Erwingt volle Breite und entfernt Ränder von WordPress-Standard-Containern */
 html, body {
     margin: 0 !important;
