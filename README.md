@@ -1,5 +1,5 @@
-# Welcome to GitHub Desktop!
+# Welcome to the GLMS (Green Leaf Münster) Website repo!
 
-This is your README. READMEs are where you can communicate what your project is and how to use it.
+This is our repo for managing our website (adding content, edit pictures etc.) 
 
-Write your name on line 6, save it, and then head back to GitHub Desktop.
+We are working mainy with PHP files that create a theme. Our Website is hosted in Wordpress. 
